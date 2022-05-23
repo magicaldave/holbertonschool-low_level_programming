@@ -1,10 +1,10 @@
 #include <stdio.h>
 /*
- * This C program outputs 0-9 using putchar
+ * This C program the alphabet backwards
  */
 
 /**
- * main - prints integers and a newline
+ * main - call var, print backwards
  * Return: always 0
  */
 int main(void)
