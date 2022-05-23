@@ -20,8 +20,11 @@ int main(void)
 
 				putchar(ch);
 				putchar(ch2);
-				putchar(44);
-				putchar(32);
+				if (ch < '8')
+				{
+					putchar(44);
+					putchar(32);
+				}
 			}
 		}
 	putchar('\n');
