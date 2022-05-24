@@ -5,16 +5,18 @@
  */
 
 /**
- * print_alphabet_x10 - prints a string in an array via a loop, ten times
+ * _islower - converts characters to int and checks their case based on value
+ * Between a and z
+ * c - char to convert in ASCII Decimal
  */
 int _islower(int c)
 {
-	if (c < 97)
+	if (c >= 97 && c <= 122)
 	{
-		return 0;
+		return (1);
 			}
 	else
 	{
-		return 1;
+		return (0);
 			}
 }
