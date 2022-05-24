@@ -13,9 +13,9 @@ int main(void)
 {
 	int i;
 	char s[] = "_putchar\n";
-	int length = sizeof(s); /* / sizeof(s[0]);*/
+	int length = (sizeof(s) - 1);
 
-	for (i = 0 ; i < (length - 1) ; i++)
+	for (i = 0 ; i < length ; i++)
 		_putchar(s[i]);
 	return (0);
 }
