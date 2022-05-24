@@ -7,7 +7,8 @@
 /**
  * _islower - converts characters to int and checks their case based on value
  * Between a and z
- * c - char to convert in ASCII Decimal
+ * Return: 1 if lower alpha, 0 if anything else
+ * @c: char to convert in ASCII Decimal
  */
 int _islower(int c)
 {
