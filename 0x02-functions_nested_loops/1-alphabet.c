@@ -5,7 +5,7 @@
  */
 
 /**
- * main - prints a string in an array via a loop
+ * print_alphabet - prints a string in an array via a loop
  */
 void print_alphabet(void)
 {
