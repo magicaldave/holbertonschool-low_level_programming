@@ -11,5 +11,5 @@
  */
 int _abs(int v)
 {
-	return v * ((v>0) - (v<0));
+	return (v * ((v > 0) - (v < 0)));
 }
