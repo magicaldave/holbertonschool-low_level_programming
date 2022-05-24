@@ -8,14 +8,14 @@
  * main - prints a string in an array via a loop
  * Return: always 0
  */
+
 int main(void)
 {
 	int i;
-	char s[] = "_putchar";
-	int length = sizeof(s) / sizeof(s[0]);
+	char s[] = "_putchar\n";
+	int length = sizeof(s); /* / sizeof(s[0]);*/
 
-	for (i = 1 ; i < length ; i++)
+	for (i = 0 ; i < (length - 1) ; i++)
 		_putchar(s[i]);
-	_putchar(10);
 	return (0);
 }
