@@ -17,10 +17,11 @@ void times_table(void)
 		for (w = 0 ; w <= 9 ; w++)
 		{
 			int prod = (l * w);
+
 			if (prod == 0)
 			{
 				_putchar(prod + '0');
-				if ( l == 0 && w != 9)
+				if (l == 0 && w != 9)
 				{
 					_putchar(44);
 					_putchar(32);
@@ -31,7 +32,7 @@ void times_table(void)
 			{
 				_putchar(44);
 				_putchar(32);
-				_putchar(( (l * w) / 10) + '0');
+				_putchar(((l * w) / 10) + '0');
 				_putchar((prod % 10) + '0');
 			}
 			else
