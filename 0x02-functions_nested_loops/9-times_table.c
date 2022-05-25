@@ -16,19 +16,30 @@ void times_table(void)
 	{
 		for (w = 0 ; w <= 9 ; w++)
 		{
-			if ( (l * w) < 10 )
+			int prod = (l * w);
+			if (prod == 0)
 			{
-				_putchar(32);
-				_putchar(32);
-				_putchar(( (l * w) ) + '0');
+				_putchar(prod + '0');
+				if ( l == 0 && w != 9)
+				{
+					_putchar(44);
+					_putchar(32);
+					_putchar(32);
+				}
+			}
+			else if (prod >= 10)
+			{
 				_putchar(44);
+				_putchar(32);
+				_putchar(( (l * w) / 10) + '0');
+				_putchar((prod % 10) + '0');
 			}
 			else
 			{
-				_putchar(( (l * w) / 10) + '0');
-				_putchar(((l * w) % 10) + '0');
 				_putchar(44);
 				_putchar(32);
+				_putchar(32);
+				_putchar((prod % 10) + '0');
 			}
 		}
 		_putchar(10);
