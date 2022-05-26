@@ -10,12 +10,10 @@ int main(void)
 
 	for (count = 0 ; count < 1024 ; count++)
 	{
-		if ((count % 3) == 0)
-			sum = sum + count;
-		if ((count % 5) == 0)
+		if ((count % 3) == 0 || (count % 5) == 0)
 			sum = sum + count;
 	}
 	if (count == 1024)
 		printf("%d\n", sum);
-	return (sum);
+	return (0);
 }
