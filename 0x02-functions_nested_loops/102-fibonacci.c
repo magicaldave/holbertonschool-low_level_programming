@@ -13,9 +13,14 @@ int main(void)
 	for (count = 0 ; count < 50 ; count++)
 	{
 		sum = (p1x + p2x);
-		printf("%ld, ", sum);
+		printf("%ld", sum);
 		p2x = p1x;
 		p1x = sum;
+		if (count != 49)
+		{
+			putchar(44);
+			putchar(32);
+		}
 	}
 	putchar(10);
 	return (0);
