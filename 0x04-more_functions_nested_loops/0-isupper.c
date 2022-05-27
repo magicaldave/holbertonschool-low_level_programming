@@ -5,9 +5,9 @@
  */
 
 /**
- * _islower - converts characters to int and checks their case based on value
+ * _isupper - converts characters to int and checks their case based on value
  * Between a and z
- * Return: 1 if lower alpha, 0 if anything else
+ * Return: 0 if lowercase, 1 if anything else
  * @c: char to convert in ASCII Decimal
  */
 int _isupper(int c)
