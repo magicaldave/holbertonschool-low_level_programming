@@ -8,7 +8,11 @@
 
 void print_diagonal(int n)
 {
-	if (n > 0)
+	if (n <= 0)
+	{
+		putchar(10);
+	}
+	else
 	{
 		int i, s;
 
@@ -22,6 +26,4 @@ void print_diagonal(int n)
 			_putchar(10);
 		}
 	}
-	else
-		_putchar(10);
 }
