@@ -3,7 +3,7 @@
 /**
  * print_triangle - print a triangle with n number of lines and hashtags
  * Return: void
- * @n: number of lines and # to print
+ * @size: number of lines and # to print
  */
 
 void print_triangle(int size)
