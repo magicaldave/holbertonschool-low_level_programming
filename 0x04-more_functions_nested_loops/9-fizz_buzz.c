@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * fizzbuzz - prints multiples of 3 and 5 up to 100
+ * main - prints multiples of 3 and 5 up to 100
  * Return: always 0
  */
 
@@ -15,7 +15,7 @@ int main(void)
 		{
 			printf("Fizzbuzz ");
 		}
-		else if ((i % 5 ) == 0)
+		else if ((i % 5) == 0)
 			printf("Buzz ");
 		else if ((i % 3) == 0)
 			printf("Fizz ");
