@@ -8,28 +8,12 @@
 
 void print_rev(char *s)
 {
-	int i;
+	int i, n;
 
-	for (i = (_strlen(s) - 1) ; i >= 0 ; i--)
+	for (n = 0 ; s[n] != '\0' ; n++){}
+	for (i = (n - 1) ; i >= 0 ; i--)
 	{
 		_putchar(s[i]);
 	}
 	_putchar(10);
-}
-
-/**
- * _strlen - reads 1D array
- * Return: number of characters from input
- * @s: string input to read
- */
-
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
 }
