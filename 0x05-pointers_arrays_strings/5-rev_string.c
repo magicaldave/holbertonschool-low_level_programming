@@ -7,21 +7,21 @@
  * @s: string to be reversed
  */
 
-void rev_string(char *s)
+void rev_string(char *src)
 {
-	int s_l = 0, src_l;
-	char *src = s, tmp;
+	int src_l = 0, dest_l;
+	char *dest = src, tmp;
 
-	for (src_l = 0 ; *(s + src_l) != '\0' ; src_l++)
+	for (dest_l = 0 ; *(src + dest_l) != '\0' ; dest_l++)
 	{
 	}
-	src_l -= 1;
-	while (src_l > s_l)
+	dest_l -= 1;
+	while (dest_l > src_l)
 	{
-		tmp = *(s + s_l);
-		*(s + s_l) = *(src + src_l);
-		*(src + src_l) = tmp;
-		src_l--;
-		s_l++;
+		tmp = *(src + src_l);
+		*(src + src_l) = *(dest + dest_l);
+		*(dest + dest_l) = tmp;
+		dest_l--;
+		src_l++;
 	}
 }
