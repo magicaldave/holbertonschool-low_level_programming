@@ -2,10 +2,9 @@
 #include <stdio.h>
 
 /**
- * _strcpy - copies one string to another location
- * Return: pointer to destination string
- * @dest: location to copy to
- * @src: string to be copied
+ * rev_string - reverses a given input string
+ * Return: always 0
+ * @s: input string to reverse
  */
 
 void rev_string(char *s)
