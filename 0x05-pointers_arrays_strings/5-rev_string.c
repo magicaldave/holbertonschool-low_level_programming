@@ -21,8 +21,6 @@ void rev_string(char *s)
 		tmp = *(s + s_l);
 		*(s + s_l) = *(src + src_l);
 		*(src + src_l) = tmp;
-		if (*(src + src_l) == '\0')
-			break;
 		src_l--;
 		s_l++;
 	}
