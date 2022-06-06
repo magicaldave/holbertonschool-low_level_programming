@@ -7,7 +7,6 @@
  * @src: string to be appended to dest
  */
 
-
 char *_strcat(char *dest, char *src)
 {
 	int dn, sn;
@@ -22,3 +21,4 @@ char *_strcat(char *dest, char *src)
 	}
 	return (dest);
 }
+
