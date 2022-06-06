@@ -2,9 +2,9 @@
 
 /**
  * _strcat - Concatenates two strings
- * Return: pointer to destination string
  * @dest: destination string
  * @src: string to be appended to dest
+ * Return: pointer to destination string
  */
 
 char *_strcat(char *dest, char *src)
