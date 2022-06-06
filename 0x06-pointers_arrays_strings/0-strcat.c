@@ -10,8 +10,6 @@ char *_strcat(char *dest, char *src)
 		dest[dn] = src[sn];
 		dn++;
 	}
-	if (src[sn] == '\0')
-		dest[dn] = '\0';
 	return (dest);
 }
 
