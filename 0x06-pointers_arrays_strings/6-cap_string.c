@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * string_toupper - converts lowercase to uppercase characters per word
+ * cap_string - converts lowercase to uppercase characters per word
  * @str: input string to translate
  * Return: translated string as pointer
  */
@@ -9,7 +9,7 @@
 char *cap_string(char *str)
 {
 	int i, seps;
-	int newword;
+	int isseparator;
 
 	char separators[] = {9, 10, 32, 33, 34, 40, 41, 44, 46, 59, 63, 123, 125};
 
@@ -17,17 +17,16 @@ char *cap_string(char *str)
 	{
 		for (seps = 0 ; separators[seps] != '\0' ; seps++)
 		{
-			if (separators[seps] == str[i])
-				newword = 1;
+			if (separators[seps] == str[i - 1])
+				isseparator = 1;
 		}
-		if (!(str[i + 1] >= 97) && (str[i + 1] <= 122))
-			newword = 0;
-		else if (str[i] >= 97 && str[i] <= 122 && newword == 1)
+		if (str[i] >= 97 && str[i] <= 122 && isseparator == 1)
 		{
-			newword = 0;
+			isseparator = 0;
 			str[i] -= 32;
 		}
-
+		else
+			isseparator = 0;
 	}
 	return (str);
 }
