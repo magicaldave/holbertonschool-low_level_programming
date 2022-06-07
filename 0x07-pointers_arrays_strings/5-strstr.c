@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * _strstr - return address of one string, if it occurs within another
+ * @h: string to read
+ * @n: string to search for in h
+ * Return: null on fail, address of n in h otherwise
+ */
+
 char *_strstr(char *h, char *n)
 {
 	int i, x;
