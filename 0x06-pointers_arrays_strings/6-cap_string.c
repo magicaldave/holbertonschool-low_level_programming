@@ -15,6 +15,8 @@ char *cap_string(char *str)
 
 	for (i = 0 ; str[i] != '\0' ; i++)
 	{
+		if (i == 0)
+			str[i] -= 32;
 		for (seps = 0 ; separators[seps] != '\0' ; seps++)
 		{
 			if (separators[seps] == str[i - 1])
