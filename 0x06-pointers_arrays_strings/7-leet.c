@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * cap_string - converts lowercase to uppercase characters per word
+ * leet - encodes an input string into 1337sp33k.
  * @str: input string to translate
  * Return: translated string as pointer
  */
