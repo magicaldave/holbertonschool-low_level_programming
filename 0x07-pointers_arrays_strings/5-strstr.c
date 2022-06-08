@@ -9,22 +9,19 @@
 
 char *_strstr(char *h, char *n)
 {
-	int i, x;
+	int i;
 	int c = 0;
 
 	for (i = 0 ; h[i] != '\0' ; i++)
 	{
-		if (h[i] != n[0])
-			continue;
-		else
+		for (c = 0 ; n[c] != '\0' ; c++)
 		{
-			for (x = i ; h[x] == n[c] && h[x] != '\0' ; x++)
-			{
-				c++;
-				if (n[c] == '\0')
-					return (&h[i]);
-			}
+			if (h[i + c] != n[c])
+				break;
 		}
+		if (!n[c])
+			return (&h[i]);
 	}
+
 	return ('\0');
 }
