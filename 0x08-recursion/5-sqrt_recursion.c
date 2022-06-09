@@ -10,8 +10,6 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	if (n == 0 || n == 1)
-		return (n);
 	return (iactuallydothemath(2, n));
 }
 
@@ -22,14 +20,14 @@ int _sqrt_recursion(int n)
  * Return: -1 if no sqrt, else return sqrt of end
  */
 
-int iactuallydothemath(int beg, int end)
+int iactuallydothemath(int root, int input)
 {
-	if (end >= beg)
+	if (input >= root)
 	{
-		if ((beg * beg) == end)
-			return (beg);
-		if (beg * beg < end)
-			return (iactuallydothemath(++beg, end));
+		if ((root * root) == input)
+			return (root);
+		if (root * root < input)
+			return (iactuallydothemath(++root, input));
 	}
 	return (-1);
 }
