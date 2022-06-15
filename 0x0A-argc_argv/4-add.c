@@ -14,11 +14,6 @@ int main(int argc, char *argv[])
 {
 	int sum = 0, x, y;
 
-	if (argc == 1)
-	{
-		printf("0\n");
-		return (1);
-	}
 	for (x = 1 ; x < argc ; x++)
 	{
 		for (y = 0 ; argv[x][y] ; ++y)
