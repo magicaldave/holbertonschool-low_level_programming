@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - print the sum of all but the first and last args, if all are ints.
@@ -11,22 +12,24 @@
 
 int main(int argc, char *argv[])
 {
-	int sum = 0, i;
+	int sum = 0, x, y;
 
 	if (argc == 1)
 	{
 		printf("0\n");
 		return (1);
 	}
-	for (i = 1 ; i < argc ; i++)
+	for (x = 1 ; x < argc ; x++)
 	{
-		if (*argv[i] >= 48 && *argv[i] <= 57)
-			sum += atoi(argv[i]);
-		else
+		for (y = 0 ; argv[x][y] ; ++y)
 		{
-			printf("Error\n");
-			return (1);
+			if (!isdigit(argv[x][y]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
+		sum += atoi(argv[x]);
 	}
 	printf("%d\n", sum);
 	return (0);
