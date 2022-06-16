@@ -11,7 +11,7 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int is1 = strlen(s1), is2 = strlen(s2);
+	unsigned int is1, is2;
 	int c, d;
 	char *dupe;
 
@@ -19,6 +19,7 @@ char *str_concat(char *s1, char *s2)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+	is1 = strlen(s1) && (is2 = strlen(s2));
 	dupe = malloc((is1 + is2 + 1) * sizeof(char));
 	if (dupe == NULL)
 		return (NULL);
