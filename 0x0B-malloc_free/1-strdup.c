@@ -18,9 +18,12 @@ char *_strdup(char *str)
 	{
 	}
 	dupe = malloc((istr + 1) * sizeof(char));
-	for (c = 0 ; c < istr ; c++)
+	if (dupe != NULL)
 	{
-		*(dupe + c) = *(str + c);
+		for (c = 0 ; c < istr ; c++)
+		{
+			*(dupe + c) = *(str + c);
+		}
 	}
 	return (dupe);
 }
