@@ -13,11 +13,17 @@ char *str_concat(char *s1, char *s2)
 	int is1, is2, c;
 	char *dupe;
 
-	for (is1 = 0; s1[is1] != '\0'; is1++)
+	if (s1 != NULL)
 	{
+		for (is1 = 0; s1[is1] != '\0'; is1++)
+		{
+		}
 	}
-	for (is2 = 0; s2[is2] != '\0'; is2++)
+	if (s2 != NULL)
 	{
+		for (is2 = 0; s2[is2] != '\0'; is2++)
+		{
+		}
 	}
 	dupe = malloc((is1 + is2 + 1) * sizeof(char));
 	if (dupe != NULL)
