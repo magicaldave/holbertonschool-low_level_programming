@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * str_concat - concatenates two strings into a new one
@@ -10,32 +11,26 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int is1, is2, c;
+	unsigned int is1 = strlen(s1), is2 = strlen(s2);
+	int c, d;
 	char *dupe;
 
-	if (s1 != NULL)
-	{
-		for (is1 = 0; s1[is1] != '\0'; is1++)
-		{
-		}
-	}
-	if (s2 != NULL)
-	{
-		for (is2 = 0; s2[is2] != '\0'; is2++)
-		{
-		}
-	}
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	dupe = malloc((is1 + is2 + 1) * sizeof(char));
-	if (dupe != NULL)
+	if (dupe == NULL)
+		return (NULL);
+	for (c = 0 ; s1[c] != '\0' ; c++)
 	{
-		for (c = 0 ; c < is1 ; c++)
-		{
-			*(dupe + c) = *(s1 + c);
-		}
-		for (c = 0 ; c < (is1 + is2) ; c++)
-		{
-			*(dupe + is1 + c) = *(s2 + c);
-		}
+		dupe[c] = s1[c];
+	}
+	d = c;
+	for (c = 0 ; s2[c] ; c++)
+	{
+		dupe[d] = s2[c];
+		d++;
 	}
 	return (dupe);
 }
