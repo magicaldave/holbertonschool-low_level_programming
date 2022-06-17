@@ -13,15 +13,16 @@ int **alloc_grid(int width, int height)
 	int **newgrid;
 	int x, y, i;
 
-	newgrid = malloc(width * sizeof(int *));
+	newgrid = malloc(height * sizeof(int *));
 	for (i = 0 ; i < height ; i++)
-		newgrid[i] = (int *)malloc(height * sizeof(int));
-	for (x = 0 ; x < width ; x++)
+		newgrid[i] = malloc(width * sizeof(int));
+	for (x = 0 ; x < height ; x++)
 	{
-		for (y = 0 ; y < height; y++)
+		for (y = 0 ; y < width; y++)
 		{
 			newgrid[x][y] = 0;
 		}
 	}
 	return (newgrid);
 }
+
