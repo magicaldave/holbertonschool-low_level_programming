@@ -3,10 +3,11 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *newmem;
+	int *newmem;
 
 	newmem = malloc(b);
-	if (newmem == NULL)
+
+	if (!newmem)
 		exit(98);
 	return (newmem);
 }
