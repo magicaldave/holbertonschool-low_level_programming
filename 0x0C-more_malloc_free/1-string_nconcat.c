@@ -1,6 +1,14 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * string_nconcat - concatenates two strings, up to N characters
+ * @s1: string to be appended
+ * @s2: string which IS appended
+ * @n: number of chars to append from s2
+ * Return: new string generated
+ */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i = 0, j = 0;
