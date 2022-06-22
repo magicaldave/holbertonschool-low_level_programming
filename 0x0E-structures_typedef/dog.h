@@ -6,12 +6,13 @@
  * @owner: name of owner. compatible with single- or double-parent households.
  * @age: age of dog, accepting partial years
  */
-struct dog
+typedef struct dog
 {
 	char *name, *owner;
 	float age;
-};
+} dog_t;
 
 /**Function Declarations*/
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
 #endif /**DOG*/
