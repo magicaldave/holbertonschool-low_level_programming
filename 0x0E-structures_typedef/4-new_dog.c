@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * new_dog - manually builds a dog struct and error-checks it
@@ -28,8 +29,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	name_cpy = malloc(sizeof(name) * sizeof(*name_cpy));
-	owner_cpy = malloc(sizeof(owner) * sizeof(*owner_cpy));
+	name_cpy = malloc((strlen(name) + 1) * sizeof(*name_cpy));
+	owner_cpy = malloc((strlen(owner) + 1) * sizeof(*owner_cpy));
 
 	if (!name_cpy || !owner_cpy)
 	{
