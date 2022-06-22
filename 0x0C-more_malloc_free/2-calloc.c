@@ -14,17 +14,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	uint8_t *newmem;
 	unsigned int i;
 
-	if (nmemb != 0 && size != 0)
+	if (nmemb == 0 || size == 0)
 	{
-		newmem = malloc(nmemb * size);
-		if (newmem == NULL)
-			return (NULL);
-		for (i = 0 ; i < nmemb ; i++)
-		{
-			newmem[i] = 0;
-		}
-		return (newmem);
+		return (NULL);
 	}
-
-	return (NULL);
+	newmem = malloc(nmemb * size);
+	if (!newmem)
+		return (NULL);
+	for (i = 0 ; i < nmemb ; i++)
+		newmem[i] = 0;
+	return (newmem);
 }
