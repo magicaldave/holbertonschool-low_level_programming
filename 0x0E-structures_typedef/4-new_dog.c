@@ -20,8 +20,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	if (!name || age != age || !owner)
+	{
 		free(newdog);
 		return (NULL);
+	}
 
 	name_cpy = malloc(sizeof(name) * sizeof(*name_cpy));
 	owner_cpy = malloc(sizeof(owner) * sizeof(*owner_cpy));
