@@ -1,6 +1,10 @@
 #include "dog.h"
 #include <stdlib.h>
 
+/**
+ * free_dog - frees memory used by dogs
+ * @d: struct to free up
+ */
 void free_dog(dog_t *d)
 {
 	if (d == NULL)
