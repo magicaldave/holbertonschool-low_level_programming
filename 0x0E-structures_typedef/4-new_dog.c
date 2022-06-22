@@ -17,8 +17,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	unsigned int i;
 
 	if (!newdog)
+	{
 		free(newdog);
 		return (NULL);
+	}
 
 	if (!name || age != age || !owner)
 	{
