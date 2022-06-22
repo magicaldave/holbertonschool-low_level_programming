@@ -14,7 +14,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	uint8_t *newmem;
 	unsigned int i;
 
-	if (nmemb != 0 || size != 0)
+	if (nmemb != 0 && size != 0)
 	{
 		newmem = malloc(nmemb * size);
 		if (newmem == NULL)
