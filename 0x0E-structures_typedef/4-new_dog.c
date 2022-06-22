@@ -12,15 +12,14 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	dog_t *newdog = malloc(sizeof(newdog));
 	char *name_cpy, *owner_cpy;
 	unsigned int i;
 
-	if (!name || age != age || !owner)
+	if (!newdog)
 		return (NULL);
 
-	dog_t *newdog = malloc(sizeof(newdog));
-
-	if (!newdog)
+	if (!name || age != age || !owner)
 		return (NULL);
 
 	name_cpy = malloc(sizeof(name) * sizeof(*name_cpy));
@@ -31,6 +30,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(newdog);
 		return (NULL);
 	}
+
 
 
 	for (i = 0 ; i < sizeof(name) ; i++)
