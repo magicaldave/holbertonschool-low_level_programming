@@ -33,6 +33,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (!name_cpy || !owner_cpy)
 	{
+		free(name_cpy);
+		free(owner_cpy);
 		free(newdog);
 		return (NULL);
 	}
