@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdint.h>
 
 /**
  * _calloc - creates a char * memory space and populates it with zeroes
@@ -10,7 +11,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *newmem;
+	uint8_t *newmem;
 	unsigned int i;
 
 	if (nmemb != 0 || size != 0)
