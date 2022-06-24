@@ -15,15 +15,10 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int i = 0;
 
-	for (i = 0; s[i] ; i++)
-	{
-	}
-
-	if (i != 1)
+	if (strlen(s) != 1)
 		return (NULL);
-	i = 0;
 
 	while (ops[i].op != NULL && s[0] != ops[i].op[0])
 		i++;
