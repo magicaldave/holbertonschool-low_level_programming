@@ -5,7 +5,7 @@
  * @f: function to call; no return, takes string (char pointer)
  */
 
-void print_name(char *name, void (*f)(char *))
+void print_name(char *name, print f)
 {
 	if (name && f)
 		f(name);
