@@ -1,4 +1,5 @@
 #include "function_pointers.h"
+#include <stdlib.h>
 /**
  * print_name - use callback function to print input
  * @name: string to print
@@ -7,5 +8,7 @@
 
 void print_name(char *name, print f)
 {
-	f(name);
+	if (*name != NULL)
+		f(name);
+	return (NULL);
 }
