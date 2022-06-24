@@ -11,4 +11,8 @@ void print_name(char *name, void (*f)(char *));
 typedef void (*intaction)(int);
 /* on arg0 of size arg1 call arg3 */
 void array_iterator(int *array, size_t size, void (*action)(int));
+/*Project #2*/
+/*Typedef for int actions returning int*/
+typedef int (*retint)(int);
+int int_index(int *array, int size, int (*cmp)(int));
 #endif/**MAIN.H*/
