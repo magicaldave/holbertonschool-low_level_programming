@@ -1,4 +1,9 @@
 #include "3-calc.h"
+/**
+ * get_op_func - determines operator to use based on input char
+ * @s: input character to check as math operator
+ * Return: pointer to function to use
+ */
 
 int (*get_op_func(char *s))(int, int)
 {
