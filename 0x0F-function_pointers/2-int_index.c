@@ -1,5 +1,12 @@
 #include "function_pointers.h"
 
+/**
+ * int_index - performs input action on input array
+ * @array: integer array to act on
+ * @size: size of array to read
+ * @cmp: pointer to desired function
+ */
+
 int int_index(int *array, int size, retint cmp)
 {
 	int i;
