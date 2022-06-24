@@ -5,6 +5,7 @@
  * @array: integer array to act on
  * @size: size of array to read
  * @cmp: pointer to desired function
+ * Return: -1 on bad input or not match, otherwise index of matched val
  */
 
 int int_index(int *array, int size, retint cmp)
@@ -17,6 +18,7 @@ int int_index(int *array, int size, retint cmp)
 	for (i = 0 ; i < size ; i++)
 	{
 		int r = cmp(array[i]);
+
 		if (r != 0)
 			return (i);
 	}
