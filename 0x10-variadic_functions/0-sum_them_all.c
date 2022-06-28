@@ -1,6 +1,12 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 
+/**
+ * sum_them_all - takes variable number of int inputs and sums them.
+ * @n: number of input arguments
+ * Return: sum of inputs, or 0 if count not provided.
+ */
+
 int sum_them_all(const unsigned int n, ...)
 {
 	unsigned int i;
