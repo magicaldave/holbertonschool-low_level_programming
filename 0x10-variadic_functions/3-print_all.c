@@ -47,5 +47,5 @@ void print_all(const char * const format, ...)
 
 	va_end(inputs);
 
-	putchar(10);
+	printf("\n");
 }
