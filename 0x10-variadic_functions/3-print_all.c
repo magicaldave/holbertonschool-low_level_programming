@@ -41,7 +41,7 @@ void print_all(const char * const format, ...)
 			break;
 		}
 		if (format[i + 1] && sep)
-			printf(sep);
+			printf("%s", sep);
 		i++;
 	}
 
