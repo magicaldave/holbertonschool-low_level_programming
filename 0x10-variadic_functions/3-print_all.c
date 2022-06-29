@@ -2,45 +2,50 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 
+/**
+ * print_all - takes variable inputs of all types and prints 'em!
+ * @format: formats of each input type
+ * Return: None
+ */
+
 void print_all(const char * const format, ...)
 {
-	void *printstr;
-	char *instr, *validargs;
-	int i = 0, c;
+	char *str, *sep;
+	int i = 0;
 	va_list inputs;
 
-	validargs = "cifs";
+	va_start(inputs, format);
+
 	while (format[i])
 	{
-		va_start(inputs, format);
-		c = 0;
-		while (validargs[c] != format[i])
-		{
-			if (format[i] == validargs[c])
-			{
-			}
-			c++;
-		}
-		switch (validargs[c])
+		sep = ", ";
+		switch (format[i])
 		{
 		case 'c':
-			instr = va_arg(inputs, char);
+			printf("%c", va_arg(inputs, int));
 			break;
 		case 'i':
-			instr = "i";
+			printf("%i", va_arg(inputs, int));
 			break;
 		case 'f':
-			instr = "f";
+			printf("%f", va_arg(inputs, double));
 			break;
 		case 's':
-			instr = "s";
+			str = va_arg(inputs, char *);
+			if (!str)
+				str = "(nil)";
+			printf("%s", str);
+			break;
+		default:
+			sep = "";
 			break;
 		}
-		if (c == 4)
-		{
-			i++;
-			continue;
-		}
+		if (format[i + 1] && sep)
+			printf(sep);
 		i++;
 	}
+
+	va_end(inputs);
+
+	putchar(10);
 }
