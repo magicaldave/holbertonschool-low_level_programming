@@ -11,12 +11,12 @@
 void print_all(const char * const format, ...)
 {
 	char *str, *sep;
-	int i = 0;
+	unsigned int i = 0;
 	va_list inputs;
 
 	va_start(inputs, format);
 
-	while (format[i])
+	while (format && format[i])
 	{
 		sep = ", ";
 		switch (format[i])
