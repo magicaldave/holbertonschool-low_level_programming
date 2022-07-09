@@ -1,2 +1,7 @@
-/0x01-variables_if_else_while/0-positive_or_negative
-/0x04-more_functions_nested_loops/3-print_numbers.c~
+*~
+*main.c
+a.out
+
+!*.c
+!*.h
+!*.md
