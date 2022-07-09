@@ -7,7 +7,7 @@
 #include <string.h>
 
 /* Macro to read a linked list. only used for project #1 */
-#define readlinkedlist() for (n = 0, tmp = h ; tmp ; tmp = tmp->next, n++)
+#define countlinkedlist() for (n = 0, tmp = h ; tmp ; tmp = tmp->next, n++)
 
 /**
  * struct node - linked list item

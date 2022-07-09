@@ -10,7 +10,7 @@ size_t list_len(const list_t *h)
 	int n;
 	const list_t *tmp;
 
-	readlinkedlist();
+	countlinkedlist();
 
 	return (n);
 }
