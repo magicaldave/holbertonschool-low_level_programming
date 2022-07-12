@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- *
- *
- *
+ * print_listint - prints all elements of a list storing ints
+ * @h: current head of LL
+ * Return: number of elements as unsigned int
  */
 
 size_t print_listint(const listint_t *h)
