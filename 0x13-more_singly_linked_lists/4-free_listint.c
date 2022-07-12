@@ -1,6 +1,4 @@
 #include "lists.h"
-#ifndef FREE
-#define FREE
 /**
  * free_listint - frees memory used by a LL
  * @head: head of LL
@@ -11,12 +9,11 @@ void free_listint(listint_t *head)
 {
 	listint_t *temp = head;
 
-	while (head)
+	while (temp->next)
 	{
-		temp = head;
-		head = head->next;
-		free(temp);
+		temp = temp->next;
+		free(head);
+		head = temp;
 	}
-	free(head);
+	free(temp);
 }
-#endif
