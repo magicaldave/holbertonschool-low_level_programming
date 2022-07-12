@@ -5,3 +5,16 @@
 ./*/!*.c
 ./*/!*.h
 ./*/!*.md
+/0x01-variables_if_else_while/0-positive_or_negative
+/0x04-more_functions_nested_loops/3-print_numbers.c~
+/0x0B-malloc_free/1-main.c
+/0x0B-malloc_free/2-main.c
+/0x0B-malloc_free/new3-alloc_grid.c
+*.out
+a
+b
+c
+d
+e
+*main.c
+.gdb_history
