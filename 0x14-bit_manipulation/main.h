@@ -5,6 +5,7 @@
 #include <string.h>
 #include <unistd.h>
 /* Macros */
+#define max_bits 64 /* Only float types are > 64 bits */
 #define bitlen(n)	for (len = 0; (n >> len) > 1; len++)
 /* Function Pointers */
 unsigned int binary_to_uint(const char *b);
