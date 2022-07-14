@@ -4,6 +4,8 @@
 #include <stddef.h>
 #include <string.h>
 #include <unistd.h>
+/* Macros */
+#define bitlen(n)	for (len = 0; (n >> len) > 1; len++)
 /* Function Pointers */
 unsigned int binary_to_uint(const char *b);
 void print_binary(unsigned long int n);

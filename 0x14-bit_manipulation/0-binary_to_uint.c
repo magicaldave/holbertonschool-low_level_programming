@@ -5,7 +5,6 @@
  * @b: string of 0 and 1
  * Return: 0 on bad input, or resulting int
  */
-
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int power = 0, result = 0;
@@ -24,7 +23,7 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 
 		if (b[i] == '1')
-			result += (1 << power);
+			(result) |= (1 << power);
 	}
 
 	return (result);
