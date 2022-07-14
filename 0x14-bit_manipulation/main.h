@@ -7,6 +7,7 @@
 /* Macros */
 #define max_bits 64 /* Only float types are > 64 bits */
 #define bitlen(n)	for (len = 0; (n >> len) > 1; len++)
+#define countflips() for (num = (n ^ m); num > 0; flips++, num &= (num - 1))
 /* Function Pointers */
 unsigned int binary_to_uint(const char *b);
 void print_binary(unsigned long int n);
