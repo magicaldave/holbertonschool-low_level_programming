@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#define entries array
 /**
  * hash_table_create - creates and initializes an empty hash table
  * @size: number of elements to store in the table
@@ -13,10 +14,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	/* Allocate table entries */
-	hashtable->array = malloc(sizeof(hash_node_t *) * size);
+	hashtable->entries = malloc(sizeof(hash_node_t *) * size);
 
 	/* Check failed malloc */
-	if (!hashtable->array)
+	if (!hashtable->entries)
 	{
 		free(hashtable);
 		return (NULL);
@@ -24,7 +25,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	/* Set each to null */
 	for (i = 0; i < size; i++)
-		hashtable->array[i] = NULL;
+		hashtable->entries[i] = NULL;
 	hashtable->size = size;
 
 	return (hashtable);
