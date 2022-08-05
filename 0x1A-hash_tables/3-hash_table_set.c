@@ -22,22 +22,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!new)
 		return (0);
 
-	new->key = strdup(key);
-	new->value = strdup(value);
-	new->next = NULL;
-
 	if (current)
 	{
 		if (strcmp(current->key, key) == 0)
 		{
-			free(new->key);
-			free(new->value);
-			free(new);
+			free(current->value);
+			current->value = strdup(value);
 			return (1);
 		}
-		for (i = 0; ht->array[i]; i++)
-		;
+		current = current->next;
 	}
+	new->key = strdup(key);
+
+	new->value = strdup(value);
+
+	new->next = ht->array[i];
+
 	ht->array[i] = new;
+
 	return (1);
 }
