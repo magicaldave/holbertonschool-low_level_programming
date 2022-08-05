@@ -7,19 +7,22 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	size_t i;
+	unsigned long int i;
 	char *reqval = NULL;
+	hash_node_t *cmp;
 
 	if (!ht || !key || *key == '\0')
 		return (NULL);
 
 	i = key_index((unsigned char *)key, ht->size);
 
-	for (; ht->array[i]; i++)
-	{
-		if (strcmp(key, ht->array[i]->key) == 0)
-			reqval = ht->array[i]->value;
-	}
-	return (reqval);
+	cmp = ht->array[i];
 
+	for (; cmp; cmp = cmp->next)
+	{
+		if (strcmp(key, cmp->key) == 0)
+			reqval = cmp->value;
+	}
+
+	return (reqval);
 }
