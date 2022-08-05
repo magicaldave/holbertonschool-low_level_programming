@@ -1,4 +1,11 @@
 #include "hash_tables.h"
+#define nextelem(var) var->next
+#define freeall(hash_node) do {			\
+		free((hash_node)->key);		\
+		free((hash_node)->value);		\
+		free((hash_node));		\
+						\
+	} while (0)
 /**
  * hash_table_set - sets an element of a hash table
  * @ht: hash table object
@@ -21,24 +28,31 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!new)
 		return (0);
+	new->key = strdup(key);
+	new->value = strdup(value);
+	new->next = NULL;
 
 	if (current)
 	{
 		if (strcmp(current->key, key) == 0)
 		{
-			free(current->value);
-			current->value = strdup(value);
+			new->next = current;
+			ht->array[i] = new;
 			return (1);
 		}
-		current = current->next;
+		while (current->next)
+		{
+			if (strcmp(current->next->key, key) == 0)
+			{
+				nextelem(new) = nextelem(current->next);
+				freeall(nextelem(current));
+				nextelem(current) = new;
+				return (1);
+			}
+			current = current->next;
+		}
 	}
-	new->key = strdup(key);
-
-	new->value = strdup(value);
-
-	new->next = ht->array[i];
-
+	nextelem(new) = ht->array[i];
 	ht->array[i] = new;
-
 	return (1);
 }
