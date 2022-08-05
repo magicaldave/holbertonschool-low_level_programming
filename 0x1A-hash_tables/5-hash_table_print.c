@@ -7,7 +7,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i;
-	hash_node_t *cmp = ht->array[0];
+	hash_node_t *cmp;
 	bool notover = false;
 
 	if (!ht || ht->size == 0)
@@ -15,7 +15,7 @@ void hash_table_print(const hash_table_t *ht)
 
 	putchar('{');
 
-	for (i = 0; i < ht->size; i++, cmp = ht->array[i])
+	for (i = 0, cmp = ht->array[i]; i < ht->size; i++, cmp = ht->array[i])
 	{
 		if (!cmp)
 			continue;
