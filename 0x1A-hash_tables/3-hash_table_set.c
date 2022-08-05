@@ -11,10 +11,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	size_t i;
 	hash_node_t *new, *current;
 
-	if (!ht || !key)
-		return (0);
-
-	if (strcmp(key, "\0") == 0)
+	if (!ht || !key || *key == '\0')
 		return (0);
 
 	i = key_index((unsigned char *)key, ht->size);
@@ -31,20 +28,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (current)
 	{
-		while (current)
+		if (strcmp(current->key, key) == 0)
 		{
-			if (strcmp(current->key, key) == 0)
-			{
-				free(new->key);
-				free(new->value);
-				free(new);
-				return (1);
-			}
-			current = current->next;
+			free(new->key);
+			free(new->value);
+			free(new);
+			return (1);
 		}
-		new->next = ht->array[i];
-		ht->array[i] = new;
-		return (1);
+		for (i = 0; ht->array[i]; i++)
+		;
 	}
 	ht->array[i] = new;
 	return (1);
