@@ -10,7 +10,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	size_t i;
 	char *reqval = NULL;
 
-	if (!ht || !key)
+	if (!ht || !key || *key == '\0')
 		return (NULL);
 
 	i = key_index((unsigned char *)key, ht->size);
