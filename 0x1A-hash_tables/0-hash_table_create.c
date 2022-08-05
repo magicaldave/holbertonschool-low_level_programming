@@ -7,26 +7,22 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	size_t i;
-	hash_table_t *hashtable = NULL;
+	hash_table_t *hashtable = malloc(sizeof(hash_table_t));
 
-	if (size > 0)
-		hashtable = malloc(sizeof(hash_table_t));
-	/* Only alloc on good input, otherwise quit and return */
-
-	if (!hashtable)
+	if (!hashtable || size == 0)
 		return (NULL);
+
 	/* Allocate table entries */
+	hashtable->array = malloc(sizeof(hash_node_t *) * size);
 
-	hashtable->array = malloc(sizeof(hash_node_t) * size);
 	/* Check failed malloc */
-
 	if (!hashtable->array)
 	{
 		free(hashtable);
 		return (NULL);
 	}
-	/* Set each to null */
 
+	/* Set each to null */
 	for (i = 0; i < size; i++)
 		hashtable->array[i] = NULL;
 	hashtable->size = size;
